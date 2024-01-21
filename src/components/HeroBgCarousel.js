@@ -23,7 +23,7 @@ export default function HeroBgCarousel() {
         clickable: true,
       }}
       autoplay={{
-        delay: 8000,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       modules={[EffectFade,Autoplay, Pagination]}
@@ -32,10 +32,10 @@ export default function HeroBgCarousel() {
    <SwiperSlide>
       <div className="flex justify-center items-center relative overflow-hidden" style={{height: "100vh"}}>
           <Image
-            src="/assets/aeroponics2.jpg"
+            src="/assets/aeroponics.jpg"
             fill
             sizes="100vw"
-            className="hover:scale-125 duration-[5000ms]"
+            className="hover:scale-125 duration-[10000ms]"
             style={{
               objectFit: "cover", // cover, contain, none
             }}
@@ -46,10 +46,10 @@ export default function HeroBgCarousel() {
       <SwiperSlide>
       <div className="flex justify-center items-center relative overflow-hidden" style={{height: "100vh"}}>
           <Image
-            src="/assets/aeroponics.jpg"
+            src="/assets/aeroponics2.jpg"
             fill
             sizes="100vw"
-            className="hover:scale-125 duration-[5000ms]"
+            className="hover:scale-125 duration-[10000ms]"
             style={{
               objectFit: "cover", // cover, contain, none
             }}
@@ -63,7 +63,7 @@ export default function HeroBgCarousel() {
             src="/assets/aeroponics3.jpg"
             fill
             sizes="100vw"
-            className="hover:scale-125 duration-[5000ms]"
+            className="hover:scale-125 duration-[10000ms]"
             style={{
               objectFit: "cover", // cover, contain, none
             }}
