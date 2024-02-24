@@ -1,18 +1,18 @@
 "use client"
 import Image from "next/image";
-import Button from "./Button";
 import { useState } from "react";
+import Button from "./Button";
 
 const tabContents = {
     tabOneContent:{
-        title:"About Us",
-        desc: "Liber iriure vix cu, fugit dicat no qui, posse detraxit has cu. Ex sint impedit vim, autem justo oportere no vel. Cu esse tacimates moderatius sed, case iriure imperdiet his ei. Eum nisl discere urbanitas te, nonumes tibique blandit cu eum. Per consul principes similique ea, delicata definitiones mei id. In purt harum sed, aliquid voluptu vulputate per ex, pro te idque esse possit id.",
+        title:"About us",
+        desc: "At Dyadic, we are passionate about pioneering climate-smart solutions that not only address environmental challenges but also create viable business opportunities. Our approach combines iterative learning, systematic research, and a commitment to sustainable practices. We offer comprehensive project design and research services, leveraging our expertise to provide valuable insights and solutions for a greener and more sustainable future.",
         imgPath:"/assets/about-us.jpg",
         btnUrl:"/"
     },
     tabTwoContent:{
-        title:"Our Mission",
-        desc: "Nemore virtute fastidii quo ei, esse possit nam sea te, qui purto graecis invidunt cu. Mea nusquam apeirian cu, usu at dicta eirmod. Id everti facilisis his, nostro nominati eleifend vel te, an quis meliore has. Id nec quis omnis aliquid. Nonumes medioc nec no, duo an veri nihil denique, solet civibus phaedrum in has. Liber iriure fugit dicat no qui. In purto harum sed.",
+        title:"Why work with Dyadic?",
+        desc: "At Dyadic, we prioritize project success with clear timelines and deliverables. Our expert team, backed by 13 years of experience, utilizes cutting-edge technology like AI and Machine Learning to address client needs efficiently.",
         imgPath:"/assets/what-we-do.jpg",
         btnUrl:"/"
     }
@@ -31,47 +31,45 @@ function handleTabClick(content) {
 
 
   return (
-    <div className="h-[38rem] px-20">
-        <div className="flex h-full w-full gap-12">
+    <div className="h-auto md:px-20 px-10 mt-16">
+        <div className="flex xl:flex-row flex-col h-full w-full gap-12">
             {/* Tab section */}
-
-            <div className="w-[42%]">
-
+            <div className="lg:w-[42%] w-full">
+                
                 {/* Tab buttons */}
-
                 <div className="flex justify-start w-full">
-                    <div onClick={()=>handleTabClick(tabContents.tabOneContent)} className={` ${isTabClicked ? 'bg-white':'bg-slate-50 border-b duration-100'} w-[35%] h-12 flex justify-between items-center px-5 rounded-t-md border-t border-r border-l border-slate-300 text-slate-600 text-xs cursor-pointer select-none hover:bg-white`}>
+                    <div onClick={()=>handleTabClick(tabContents.tabOneContent)} className={` ${isTabClicked ? 'bg-white':'bg-slate-50 border-b duration-100'} md:w-[35%] w-[45%] h-12 flex justify-between items-center px-5 rounded-t-md border-t border-r border-l border-slate-300 text-slate-600 text-xs cursor-pointer select-none hover:bg-white`}>
                         <span className="font-semibold text-slate-300">01</span>
                         <p>WHO WE ARE</p>
                     </div>
                     <div className="w-[2%] border-b border-slate-300" />
-                    <div onClick={()=>handleTabClick(tabContents.tabTwoContent)} className={` ${!isTabClicked ? 'bg-white':'bg-slate-50 border-b duration-100'} w-[35%] h-12 flex justify-between items-center px-5 rounded-t-md border-t border-r border-l border-slate-300 text-slate-600 text-xs cursor-pointer select-none hover:bg-white`}>
+                    <div onClick={()=>handleTabClick(tabContents.tabTwoContent)} className={` ${!isTabClicked ? 'bg-white':'bg-slate-50 border-b duration-100'} md:w-[35%] w-[45%] h-12 flex justify-between items-center px-5 rounded-t-md border-t border-r border-l border-slate-300 text-slate-600 text-xs cursor-pointer select-none hover:bg-white`}>
                         <span className="font-semibold text-slate-300">02</span>
-                        <p>WHAT WE DO</p>
+                        <p>WHY US</p>
                     </div>
-                    <div className="w-[28%] border-b border-slate-30" />
+                    <div className="lg:w-[28%] w-[10%] border-b border-slate-30" />
                 </div>
 
                 {/* Tab Content */}
 
-                <div className="h-full flex items-center">
+                <div className="h-full mt-20">
                     <div className="flex flex-col">
                         <div>
                             <h1 className="text-5xl">{tabContent.title}</h1>
                             <p className="mt-10 text-slate-500 font-light">{tabContent.desc}</p>
                         </div>
 
-                        <div className="mt-10">
+                        {/* <div className="mt-10">
                             <Button btnName="VIEW MORE" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
 
             {/* tab Image section */}
 
-            <div className="w-[58%]">
-               <div className="relative w-full h-full">
+            <div className="lg:w-[58%] w-full">
+               <div className="relative w-full min-h-[40rem]">
                     <Image
                         alt="Random"
                         src={tabContent.imgPath}

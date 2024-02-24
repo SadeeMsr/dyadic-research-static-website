@@ -1,4 +1,7 @@
 "use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,66 +13,89 @@ import "swiper/css/pagination";
 
 import "../styles/HeroBgCarousel.module.css";
 
-// import required modules
-import { EffectFade, Autoplay, Pagination } from "swiper/modules";
-import Image from "next/image";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import AnimatedText from "./AnimatedText";
 
-export default function HeroBgCarousel() {
+export default function HeroBgCarousel({ carouselImg, placeholderTexts }) {
+  const [replay, setReplay] = useState(true);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+
+  const container = {
+    visible: {
+      transition: {
+        staggerChildren: 0.025,
+      },
+    },
+  };
+
+  function handleSlideChange(item) {
+    setPlaceholderIndex(
+      (prevIndex) => (prevIndex + 1) % placeholderTexts.length
+    );
+    setReplay(!replay);
+    setTimeout(() => {
+      setReplay(true);
+    }, 600);
+  }
+
   return (
-    <Swiper
-      spaceBetween={30}
-      effect={"fade"}
-      pagination={{
-        clickable: true,
-      }}
-      autoplay={{
-        delay: 4000,
-        disableOnInteraction: false,
-      }}
-      modules={[EffectFade,Autoplay, Pagination]}
-      className="mySwiper"
-    >
-   <SwiperSlide>
-      <div className="flex justify-center items-center relative overflow-hidden" style={{height: "100vh"}}>
-          <Image
-            src="/assets/aeroponics.jpg"
-            fill
-            sizes="100vw"
-            className="hover:scale-125 duration-[10000ms]"
-            style={{
-              objectFit: "cover", // cover, contain, none
-            }}
-          />
+    <div>
+      <div className="relative lg:ms-20 ms-8">
+        <div
+          className="lg:w-[40%] w-full absolute flex flex-col h-screen justify-center"
+          style={{ zIndex: 5 }}
+        >
+          <h1 className="text-white lg:text-6xl text-5xl font-bold">
+            Dyadic Research
+          </h1>
+          <motion.div
+            initial="hidden"
+            animate={replay ? "visible" : "hidden"}
+            variants={container}
+          >
+            <div className="mt-5">
+              <AnimatedText placeHolders={{...placeholderTexts[placeholderIndex]}} textStyle={"text-xl"} />
+            </div>
+          </motion.div>
         </div>
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
-      <div className="flex justify-center items-center relative overflow-hidden" style={{height: "100vh"}}>
-          <Image
-            src="/assets/aeroponics2.jpg"
-            fill
-            sizes="100vw"
-            className="hover:scale-125 duration-[10000ms]"
-            style={{
-              objectFit: "cover", // cover, contain, none
-            }}
-          />
-        </div>
-      </SwiperSlide>
-
-      <SwiperSlide>
-      <div className="flex justify-center items-center relative overflow-hidden" style={{height: "100vh"}}>
-          <Image
-            src="/assets/aeroponics3.jpg"
-            fill
-            sizes="100vw"
-            className="hover:scale-125 duration-[10000ms]"
-            style={{
-              objectFit: "cover", // cover, contain, none
-            }}
-          />
-        </div>
-      </SwiperSlide>
-    </Swiper>
+      <Swiper
+        onSlideChange={handleSlideChange}
+        spaceBetween={30}
+        effect={"fade"}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectFade, Autoplay, Pagination]}
+        className="mySwiper bg-[rgba(0,0,0,0.7)]"
+      >
+        {carouselImg.map((item) => {
+          return (
+            <SwiperSlide key={item.id}>
+              <div
+                className="flex justify-center items-center relative overflow-hidden bg-[rgba(0,0,0,1)]"
+                style={{ height: "100vh" }}
+              >
+                <Image
+                  src={item.path}
+                  fill
+                  sizes="100vw"
+                  className="hover:scale-125 duration-[10000ms]"
+                  style={{
+                    objectFit: "cover", // cover, contain, none
+                  }}
+                  alt="random"
+                />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </div>
   );
 }
