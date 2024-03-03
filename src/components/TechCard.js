@@ -17,7 +17,7 @@ export default function TechCard({content}) {
           </ul>
         </div>
       </div>
-      <div className="w-full flex justify-end pe-16">
+      <div className="w-full flex justify-end pe-16 scale-90">
         <Button btnName={"READ MORE"} />
       </div>
     </div>

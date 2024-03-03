@@ -24,13 +24,9 @@ const gridTexts = [
   },
 ];
 
-
-
-
-
 export default function OurServices() {
   return (
-    <div className="relative xl:min-h-[68rem] lg:min-h-[115rem] md:min-h-[120rem] min-h-[125rem]">
+    <div className="relative xl:min-h-[70rem] lg:min-h-[110rem] md:min-h-[110rem] min-h-[98rem]">
       <div className=" w-full flex xl:flex-row flex-col absolute -top-20">
         {/* The big service cards */}
         <div
@@ -64,9 +60,9 @@ export default function OurServices() {
         </div>
 
         {/* The image or video beside service card */}
-        <div className="h-min-screen xl:w-[42%] lg:w-full bg-[url('/assets/dotted-bg.png')] bg-no-repeat bg-right-top">
+        <div className="h-min-screen md:block hidden xl:w-[42%] lg:w-full bg-[url('/assets/dotted-bg.png')] bg-no-repeat bg-right-top">
           <div className="relative mt-28">
-            <div className="absolute xl:w-[45rem] w-full xl:h-[45rem] lg:h-[48rem] md:h-[31rem] h-[18rem] xl:top-52 xl:-left-32 z-[10]">
+            <div className="absolute xl:w-[45rem] w-full xl:h-[45rem] lg:h-[48rem] md:h-[31rem] h-[18rem] xl:top-72 xl:-left-32 z-[10]">
               <Image
                 alt="Random"
                 src="/assets/black-soldier-fly.jpg"

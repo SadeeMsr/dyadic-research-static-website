@@ -8,14 +8,12 @@ import Image from "next/image";
 export default function page() {
   return (
     <div className="min-h-screen md:px-20 px-5 mt-16 pb-20">
-      <div className="relative h-[45rem] cursor-pointer overflow-hidden rounded-3xl">
+      <div className="relative lg:h-[45rem] h-[15rem] cursor-pointer overflow-hidden rounded-3xl">
         <Image
           alt="Random"
           src="/assets/lab2.jpg"
           fill
-          style={{
-            objectFit: "cover",
-          }}
+          className="md:object-cover object-contain"
         />
       </div>
 

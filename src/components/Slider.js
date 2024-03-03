@@ -20,7 +20,7 @@ export default function Slider({ galleryImgs }) {
       initialSlide="3"
       centeredSlides={true}
       loop={true}
-      spaceBetween={10}
+      spaceBetween={screenSize.width < 780 ? 0 : 15}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,

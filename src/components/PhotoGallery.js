@@ -1,8 +1,6 @@
 "use client";
 
-
-
-import photos from "@/components/photos";
+import photos from "@/components/photo";
 import PhotoAlbum from "react-photo-album";
 import GalleryImgPrototype from "./GalleryImgPrototype";
 
