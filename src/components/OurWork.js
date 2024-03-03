@@ -41,12 +41,12 @@ const galleryImgs = [
 
 export default function OurWork() {
   return (
-    <div className="h-[40rem] md:px-20 px-8">
+    <div className="h-[45rem] md:px-20 px-8 our_margin">
       <div className="py-4 border-b border-slate-300 md:mt-20 mt-16">
         <h1 className="text-slate-600 text-sm">GALLERY</h1>
       </div>
       <div>
-        <h1 className="text-5xl pt-10">Explore Our Gallery</h1>
+        <h1 className="md:text-5xl text-4xl pt-10">Explore Our Gallery</h1>
       </div>
       <div className="mt-10 ">
         <Slider galleryImgs={galleryImgs} />

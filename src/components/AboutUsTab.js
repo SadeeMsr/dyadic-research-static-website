@@ -61,7 +61,7 @@ export default function AboutUsTab() {
           <div className="h-full mt-20">
             <div className="flex flex-col">
               <div>
-                <h1 className="text-5xl">{tabContent.title}</h1>
+                <h1 className="md:text-5xl text-4xl">{tabContent.title}</h1>
                 <p className="mt-10 text-slate-500 font-light">
                   {tabContent.desc}
                 </p>

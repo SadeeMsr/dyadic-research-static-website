@@ -8,6 +8,33 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+const socialMediaLinks = [
+  { Icon: FaFacebookF, href: "https://www.facebook.com/" },
+  { Icon: FaLinkedinIn, href: "https://www.linkedin.com/" },
+  { Icon: FaInstagram, href: "https://www.instagram.com/" },
+  { Icon: FaTwitter, href: "https://twitter.com/" },
+  { Icon: FaYoutube, href: "https://www.youtube.com/" },
+];
+
+const footerSections = [
+  {
+    title: "QUICK LINKS",
+    items: ["Home", "What We Do", "Research & Publications", "Contact Us"],
+  },
+  {
+    title: "Rubaga Division, Kampala, Uganda",
+    items: ["P.O Box 27388, Rubaga Road, Sembule B Zone", "+256773928080, +256700595967"],
+  },
+  {
+    title: "Vatara, Dhaka-1230, Bangladesh",
+    items: ["Plot#1292, Road#60a, Block-L, Bashundhara R/A", "+88017556222, +880192222011"],
+  },
+  {
+    title: "Nairobi, Kenya",
+    items: ["Duduville Campus, Kasarani,", "+256773928080, +256700595967"],
+  },
+];
+
 export default function Footer() {
   return (
     <div className="bg-[#b4c6e4] text-white">
@@ -29,13 +56,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-5 cursor-pointer mt-10 text-slate-900">
-            {[
-              { Icon: FaFacebookF, href: "https://www.facebook.com/" },
-              { Icon: FaLinkedinIn, href: "https://www.linkedin.com/" },
-              { Icon: FaInstagram, href: "https://www.instagram.com/" },
-              { Icon: FaTwitter, href: "https://twitter.com/" },
-              { Icon: FaYoutube, href: "https://www.youtube.com/" },
-            ].map(({ Icon, href }, index) => (
+            {socialMediaLinks.map(({ Icon, href }, index) => (
               <Link key={index} target="_blank" href={href}>
                 <Icon size={20} />
               </Link>
@@ -43,24 +64,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="lg:w-[43%] w-full mt-16 grid lg:grid-cols-2 gap-10 text-sm">
-          {[
-            {
-              title: "QUICK LINKS",
-              items: ["Home", "What We Do", "Research & Publications", "Contact Us"],
-            },
-            {
-              title: "Rubaga Division, Kampala, Uganda",
-              items: ["P.O Box 27388, Rubaga Road, Sembule B Zone", "+256773928080, +256700595967"],
-            },
-            {
-              title: "Vatara, Dhaka-1230, Bangladesh",
-              items: ["Plot#1292, Road#60a, Block-L, Bashundhara R/A", "+88017556222, +880192222011"],
-            },
-            {
-              title: "Nairobi, Kenya",
-              items: ["Duduville Campus, Kasarani,", "+256773928080, +256700595967"],
-            },
-          ].map(({ title, items }, index) => (
+          {footerSections.map(({ title, items }, index) => (
             <div key={index}>
               <h1 className="font-semibold text-[#012D50]">{title}</h1>
               <ul className="text-[#587792] cursor-pointer mt-2">

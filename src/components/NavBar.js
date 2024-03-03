@@ -62,7 +62,7 @@ export default function NavBar() {
                   >
                     <Link
                       href="/"
-                      className="lg:hidden block border-b group relative before:absolute before:inset-x-0 before:bottom-0 before:h-1 before:origin-right before:scale-x-0 before:bg-slate-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                      className="lg:hidden block border-b group relative before:absolute before:inset-x-0 before:bottom-0  before:origin-right before:scale-x-0 before:bg-slate-100 before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                     >
                       <div className=" flex justify-start items-center w-[40%]">
                         {/* <div className="bg-green-400 absolute h-36 w-40 -z-10" /> */}

@@ -47,7 +47,7 @@ const researchAndEvaluationCardsContent = [
 
 export default function ResearchEval() {
   return (
-    <div className="mt-20">
+    <div className="mt-20 pb-12">
       <h1 className="border-b pb-5 text-slate-600 uppercase text-sm">
         Research and Evaluation Services
       </h1>

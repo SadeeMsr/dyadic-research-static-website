@@ -78,3 +78,8 @@
     height: 4vw;
   }
 }
+@media only screen and (max-width: 320px) {
+  .our_margin {
+    margin-top: 300px;
+  }
+}

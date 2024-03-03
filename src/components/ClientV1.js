@@ -1,3 +1,35 @@
+const valuedClients = [
+  "Ministry of Health, Uganda",
+  "Ministry of Education and Sports, Uganda",
+  "Ministry of Agriculture, Animal Industry and Fisheries, Uganda",
+  "Ministry of Trade, Industry and Cooperatives, Uganda",
+  "Wakiso District Local Government, Uganda",
+  "County Government of Murang’a, Kenya",
+  "County Government of Kirinyaga, Kenya",
+  "MasterCard Foundation",
+  "Bill and Melinda Gates Foundation",
+  "International Development Research Center (IDRC)",
+  "NHH-Norwegian School of Economics",
+  "University of Southern California",
+  "Private Enterprise Development in Low Income Countries (PEDL)",
+  "Murang’a Water and Sewerage Company (Muwasco)",
+  "Nairobi City Water and Sewerage Company",
+];
+
+const partnerOrganizations = [
+  "International Growth Center",
+  "STOP TB Partnership",
+  "The World Bank",
+  "Ministry of Trade, Industry and Cooperatives, Uganda",
+  "East Africa Market Development Associates ( EAMDA)",
+  "Partnership for Economic Policy (PEP)",
+  "NHH-Norwegian School of Economics",
+  "University of Sydney",
+  "University of Texas (Somalia)",
+  "Makerere University, Uganda",
+  "University of Nairobi, Kenya",
+];
+
 export default function ClientV1() {
   return (
     <div className="md:px-20 px-10 mt-20 md:mt-28">
@@ -11,25 +43,9 @@ export default function ClientV1() {
             Our Valued Clients
           </h1>
           <ul className="list-disc list-inside font-light mt-5 text-slate-500 flex flex-col gap-2">
-            <li>Ministry of Health, Uganda</li>
-            <li>Ministry of Education and Sports, Uganda</li>
-            <li>
-              Ministry of Agriculture, Animal Industry and Fisheries, Uganda
-            </li>
-            <li>Ministry of Trade, Industry and Cooperatives, Uganda</li>
-            <li>Wakiso District Local Government, Uganda</li>
-            <li>County Government of Murang’a, Kenya</li>
-            <li>County Government of Kirinyaga, Kenya</li>
-            <li>MasterCard Foundation</li>
-            <li>Bill and Melinda Gates Foundation</li>
-            <li>International Development Research Center (IDRC)</li>
-            <li>NHH-Norwegian School of Economics</li>
-            <li>University of Southern California</li>
-            <li>
-              Private Enterprise Development in Low Income Countries (PEDL)
-            </li>
-            <li>Murang’a Water and Sewerage Company (Muwasco)</li>
-            <li>Nairobi City Water and Sewerage Company</li>
+            {valuedClients.map((client, index) => (
+              <li key={index}>{client}</li>
+            ))}
           </ul>
         </div>
 
@@ -38,17 +54,9 @@ export default function ClientV1() {
             Our Partner Organizations
           </h1>
           <ul className="list-disc list-inside font-light mt-5 text-slate-500 flex flex-col gap-2">
-            <li>International Growth Center</li>
-            <li>STOP TB Partnership</li>
-            <li>The World Bank</li>
-            <li>Ministry of Trade, Industry and Cooperatives, Uganda</li>
-            <li>East Africa Market Development Associates ( EAMDA)</li>
-            <li>Partnership for Economic Policy (PEP)</li>
-            <li>NHH-Norwegian School of Economics</li>
-            <li>University of Sydney</li>
-            <li>University of Texas (Somalia)</li>
-            <li>Makerere University, Uganda</li>
-            <li>University of Nairobi, Kenya</li>
+            {partnerOrganizations.map((partner, index) => (
+              <li key={index}>{partner}</li>
+            ))}
           </ul>
         </div>
       </div>

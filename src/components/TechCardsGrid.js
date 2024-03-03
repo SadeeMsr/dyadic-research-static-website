@@ -31,7 +31,7 @@ const cardsDetails = [
 
 export default function TechCardsGrid() {
   return (
-    <div className="md:px-20 xl:mt-36 lg:mt-32 mt-10 px-10 flex lg:flex-row flex-col justify-start items-center md:gap-5 gap-20 h-auto">
+    <div className="md:px-20 xl:mt-36 lg:mt-32 mt-10 px-10 flex lg:flex-row flex-col justify-start items-center lg:gap-5 gap-20 h-auto">
       {cardsDetails.map((item) => (
         <TechCard key={item.id} content={item} />
       ))}
