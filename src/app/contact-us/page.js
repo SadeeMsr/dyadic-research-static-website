@@ -17,7 +17,8 @@ const locations = [
   },
   {
     title: "Bangladesh",
-    address: "Konda - Bongaon Bazar road, Boliarpur, Amin Bazar, Dhaka 1340",
+    address1: "Konda - Bongaon Bazar road, Boliarpur, Amin Bazar, Dhaka 1340",
+    address2: "Plot#1292, Road#60a, Block-L, Bashundhara R/A, Vatara, Dhaka-1230",
     link1:
       "https://www.google.com/maps/place/Dyadic+BSF+Farm/@23.7990717,90.290435,17z/data=!3m1!4b1!4m6!3m5!1s0x3755b9f0d0a55261:0x95a2124657a643a7!8m2!3d23.7990668!4d90.2930099!16s%2Fg%2F11thh8spt6?entry=ttu",
     link2:
@@ -67,9 +68,9 @@ export default function Page() {
             >
              <div>
              <h1 className="text-2xl">{location.title}</h1>
-              <p className={`text-slate-500 ${index===2 || "h-20"} font-light mt-5 flex gap-2`}>
+             {location.address && <p className={`text-slate-500 ${index===2 || "h-20"} font-light mt-5 flex gap-2`}>
                 {location.address}
-              </p>
+              </p>}
              </div>
               {location.link1 && (
                 <Link
@@ -77,7 +78,7 @@ export default function Page() {
                   target="_blank"
                   className="text-slate-500 hover:underline font-light mt-5 flex gap-2"
                 >
-                  {location.address}
+                  {location.address1}
                 </Link>
               )}
               {location.link2 && (
@@ -86,7 +87,7 @@ export default function Page() {
                   target="_blank"
                   className="text-slate-500 hover:underline font-light mt-5 flex gap-2"
                 >
-                  {location.address}
+                  {location.address2}
                 </Link>
               )}
               <div>
